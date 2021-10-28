@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="BoardPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
+   <center>
+      <AnchorPane fx:id="AnchorPane" prefHeight="506.0" prefWidth="545.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="700.0" fitWidth="722.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@6450696.jpg" />
+               </image>
+            </ImageView>
+            <AnchorPane fx:id="loginPane" layoutX="6.0" layoutY="400.0" opacity="0.34" prefHeight="300.0" prefWidth="300.0" style="-fx-background-radius: 50;">
+               <children>
+                  <TextField fx:id="txtid" layoutX="30.0" layoutY="59.0" prefHeight="34.0" prefWidth="245.0" promptText="User ID">
+                     <font>
+                        <Font name="Symbol" size="12.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="btnlogin" alignment="CENTER" blendMode="EXCLUSION" cache="true" contentDisplay="TOP" layoutX="29.0" layoutY="150.0" mnemonicParsing="false" onAction="#onaction" prefHeight="43.0" prefWidth="244.0" style="-fx-border-color: #ffffff;" text="로그인">
+                     <font>
+                        <Font name="Symbol" size="12.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="labelconfirm" layoutX="30.0" layoutY="193.0" prefHeight="24.0" prefWidth="241.0" text="로그인에 실패했습니다.">
+                     <font>
+                        <Font name="Symbol" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="findid" layoutX="50.0" layoutY="256.0" onMouseClicked="#findid" text="아이디찾기">
+                     <font>
+                        <Font name="Symbol" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="findpw" layoutX="121.0" layoutY="256.0" onMouseClicked="#findpw" text="비밀번호찾기">
+                     <font>
+                        <Font name="Symbol" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="btnSignup" layoutX="202.0" layoutY="256.0" onMouseClicked="#Signup" text="회원가입">
+                     <font>
+                        <Font name="Symbol" size="12.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="txtpw" layoutX="29.0" layoutY="102.0" prefHeight="34.0" prefWidth="245.0" promptText="User Password">
+                     <font>
+                        <Font name="Symbol" size="12.0" />
+                     </font>
+                  </PasswordField>
+                  <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="50.0" layoutY="-74.0">
+                     <image>
+                        <Image url="@../../../../../../Downloads/pngwing.com.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="AnchorPane" prefHeight="506.0" prefWidth="545.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FindController">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="722.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@6450696.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="loginPane" layoutX="6.0" layoutY="400.0" opacity="0.34" prefHeight="300.0" prefWidth="300.0" style="-fx-background-radius: 50;">
+         <children>
+            <TextField fx:id="txtid" layoutX="30.0" layoutY="64.0" prefHeight="34.0" prefWidth="245.0" promptText="User Name">
+               <font>
+                  <Font name="Symbol" size="12.0" />
+               </font>
+            </TextField>
+            <Button fx:id="btnlogin" alignment="CENTER" blendMode="EXCLUSION" cache="true" contentDisplay="TOP" layoutX="28.0" layoutY="160.0" mnemonicParsing="false" onAction="#findidresult" prefHeight="43.0" prefWidth="244.0" style="-fx-border-color: #ffffff;" text="확인">
+               <font>
+                  <Font name="Symbol" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="50.0" layoutY="-74.0">
+               <image>
+                  <Image url="@../../../../../../Downloads/pngwing.com.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="txtemail" layoutX="29.0" layoutY="109.0" prefHeight="34.0" prefWidth="245.0" promptText="User Email">
+               <font>
+                  <Font name="Symbol" size="12.0" />
+               </font>
+            </TextField>
+            <Label fx:id="findidback" layoutX="126.0" layoutY="228.0" onMouseClicked="#back" text="뒤로가기" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
