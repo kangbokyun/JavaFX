@@ -13,6 +13,11 @@ public class 정리1 {
 	// fxml과 controller 연결
 	// -> fxml 파일 내 첫번째 줄에 fx:controller = "패키지명.컨트롤러"
 	
-	// 회원가입 페이지
-	// controller
+
+	// fx클래스
+	// 1. extends Application
+	// 2. Stage
+	// 3. Parent parent = FXMLLoader.load(getClass().getResource("파일명")) -> 동일 패키지는 파일명만 쓰면 되고 아니면 경로 써줘야 함
+	// 4. Scene scene = new Scene(parent);
+	// 5. stage.
 }

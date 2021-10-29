@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import dao.MemberDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -70,22 +71,23 @@ public class LoginController implements Initializable{ // 초기화
 
     @FXML
     void findid(MouseEvent event) {
-    	System.out.println("dddd");
-    	loadpage("test2_findid");
+    	loadpage("test2_Findid");
     }
 
     @FXML
     void findpw(MouseEvent event) {
-
+    	loadpage("test2_Findpw");
     }
 
     @FXML
     void onaction(ActionEvent event) {
-      	// txt에 입력된 아이디와 비밀번호를 가져와 비교하여 맞으면 로그인 아니면 ㄴㄴ 
-    	if(txtid.getText().equals("admin")) {
+      	// 1. DAO 객체 메소드 호출
+    	boolean result = MemberDAO.getMemberDAO().login(txtid.getText(), txtpw.getText());
+    	
+    	if(result) {
     		labelconfirm.setText("로그인성공");
     	} else {
-    		labelconfirm.setText("동일한 회원 정보가 없음");
+    		labelconfirm.setText("로그인실패");
     	}
     }
   
@@ -103,7 +105,7 @@ public class LoginController implements Initializable{ // 초기화
 			Parent parent = FXMLLoader.load(getClass().getResource("/Day1/" + page + ".fxml"));
 			BoardPane.setCenter(parent);
 		}catch (Exception e) {
-			
+			System.out.println(e.getMessage());
 		}
 	}
 }

@@ -1,44 +1,47 @@
 package Controller;
 
+import dao.MemberDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 
 public class FindIdController  {
 
     @FXML
-    private javafx.scene.layout.AnchorPane AnchorPane;
+    private AnchorPane SignupPane;
 
     @FXML
-    private Button btnlogin;
+    private TextField findidEmailtxt;
 
     @FXML
-    private Label findidback;
+    private TextField findidNametxt;
 
     @FXML
-    private javafx.scene.layout.AnchorPane loginPane;
+    private Button findidbtn;
 
     @FXML
-    private TextField txtid;
+    private Label findidbtnBack;
 
     @FXML
-    private TextField txtemail;
+    private Label findidconfirm;
 
     @FXML
-    void back(MouseEvent event) {
-    	LoginController.getInstance().loadpage("test2");
+    void findid(ActionEvent event) {
+    	// DAO 객체 내 findid 메소드 호출
+    	String result = MemberDAO.getMemberDAO().findid(findidNametxt.getText(), findidEmailtxt.getText());
+    	
+    	if(result != null) {
+    		findidconfirm.setText("아이디 : " + result);
+    	}
     }
 
     @FXML
-    void findidresult(ActionEvent event) {
-    	if(txtid.getText().equals("admin")) {
-    		System.out.println("dd");
-    	} else {
-    		System.out.println("ss");
-    	}
+    void findidBack(MouseEvent event) {
+    	LoginController.getInstance().loadpage("test2");
     }
 
 }
