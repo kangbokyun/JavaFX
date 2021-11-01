@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="CenterAnchorPane" prefHeight="645.0" prefWidth="726.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="164.0" fitWidth="721.0" layoutX="4.0">
+         <image>
+            <Image url="@../../../../씬빌더/equlazor3.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="180.0" fitWidth="720.0" layoutX="7.0" layoutY="459.0">
+         <image>
+            <Image url="@../../../../씬빌더/equlazor2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="721.0" layoutX="2.0" layoutY="237.0">
+         <image>
+            <Image url="@../../../../씬빌더/equlazor.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -10,13 +10,16 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 public class LoginController implements Initializable{ // 초기화
 	// 컨트롤명 선언
@@ -36,6 +39,10 @@ public class LoginController implements Initializable{ // 초기화
 	
 	public static LoginController getInstance() {
 		return instance;
+	}
+	
+	public String getlogId() {
+		return txtid.getText();
 	}
 	
     @FXML
@@ -86,6 +93,30 @@ public class LoginController implements Initializable{ // 초기화
     	
     	if(result) {
     		labelconfirm.setText("로그인성공");
+    		
+    		try {
+
+    			// 기존스테이지 끄기 -> 해당윈도우를 가져와 숨기기
+    			btnlogin.getScene().getWindow().hide();
+    			
+    			// 메인페이지
+    			Stage stage = new Stage();
+    			Parent parent;
+				parent = FXMLLoader.load(getClass().getResource("/Day1/MainPage.fxml"));
+				Scene scene = new Scene(parent);
+				stage.setScene(scene);
+				
+				// 스테이지 아이콘
+				// 1. 이미지 불러오기
+				Image image = new Image("file:C:\\Users\\ez201206\\Desktop\\KakaoTalk_20211028_150125977.png");
+				stage.getIcons().add(image);
+				
+				stage.show();
+				
+			} catch (IOException e) {
+				System.out.println(e.getMessage());
+			}
+    		
     	} else {
     		labelconfirm.setText("로그인실패");
     	}
