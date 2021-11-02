@@ -80,7 +80,7 @@ public class MyInfoController implements Initializable {
 
     @FXML
     void MIUpdateAction(ActionEvent event) {
-
+    	MainPageController.getInstance().LoadPage("MyInfoUpdatePage");
     }
 
 }

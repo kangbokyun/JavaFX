@@ -94,6 +94,9 @@ public class LoginController implements Initializable{ // 초기화
     	if(result) {
     		labelconfirm.setText("로그인성공");
     		
+    		// 로그인 성공시 10점 업데이트
+    		MemberDAO.getMemberDAO().pointUpdate(txtid.getText(), 10);
+    		
     		try {
 
     			// 기존스테이지 끄기 -> 해당윈도우를 가져와 숨기기

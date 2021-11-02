@@ -33,6 +33,11 @@ public class DB정리 {
 	// 특정필드 : select 필드명 from 테이블명 where 조건
 	// 모든필드 : select * from 테이블명 where 조건
 	
+	// 삽입(insert)
+	// 
+	
+	// 삭제(delete)
+	
 	// 조건(비교연산자, 키워드, 함수)
 	// and : 이면서, 면서, 이고, 그리고
 	//		- 조건1 and 조건2

@@ -205,7 +205,108 @@ public class MemberDAO {
 				return false;
 			}
 			
+		} 
+		
+		// 아이디 체크 메소드
+		public boolean idCheck(String id) {
+			try {
+				
+				String sql = "select m_id from member where m_id = ?";
+				pstmt = conn.prepareStatement(sql);
+
+				pstmt.setString(1, id);
+				
+				rs = pstmt.executeQuery();
+				if(rs.next()) {
+					return true; // 입력한 아이디가 이미 존재하면 
+				} else {
+					return false; // 입력한 아이디가 없으면
+				}
+				
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+				return true;
+			}
 		}
+		
+		// 포인트 증감 메소드
+		public boolean pointUpdate(String id, int point) {
+			try {
+		
+				// update : update 테이블명 set 변경할필드명 = 변경할값 where 조건
+				String sql = "update member set m_point = m_point + ? where m_id = ?";
+			
+				pstmt = conn.prepareStatement(sql);
+				
+				pstmt.setInt(1, point);
+				pstmt.setString(2, id);
+				
+				pstmt.executeUpdate();
+				
+				return true;
+				
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+				return false;
+			}
+		}
+		
+		public boolean Update(String id, String name, String email) {
+			try {
+				// "update 테이블명 set 변경필드=값, 변경할필드2 = 값2 where 조건"
+				String sql = "update member set m_name = ?, m_email = ? where m_id = ?";
+//				String sql = "update m_name and m_email from member where m_name = ? and m_email = ?";
+			
+				pstmt = conn.prepareStatement(sql);
+				
+				// sql -> ?위치에 따라 넣는 순서가 달라진다.
+				pstmt.setString(1, name);
+				pstmt.setString(2, email);
+				pstmt.setString(3, id);
+				
+				pstmt.executeUpdate();
+				
+				return true;
+				
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+				return false;
+			}
+		}
+		
+		// 게시판 설계
+		// 1. DB 설계
+			// 게시물번호	int
+			// 게시불제목	String
+			// 게시물내용	String
+			// 게시물작성자(로그인된 아이디)	String
+			// 게시물작성일(자동 주입)		String
+			// 게시물조회수	int
+		// 2. DTO 설계
+		// 3. DAO 설계
+		//------------
+		// 4. FXML 작성
+		// 5. Controller 작성
+		// 6. DAO 작성
+		
+		// DDL
+			// create table DB명.테이블명 (
+			// 필드명1 자료형 속성,
+			// 필드명2 자료형 속성,
+			// 필드명3 자료형 속성
+			// )
+			
+		// 자료형
+		// int : 정수
+		// varchar : 문자열
+		// timestamp : 날짜/시간
+		
+		// 속성
+		// primary key : 기본키(PK)
+		// auto_increment : 자동번호 주입
+		// not null : null값 제외
+		// default : 초기값
+		// now() : 현재 날짜와 시간을 알려주는 함수
 		
 //----------------------------------------------------------------------------------------------------------------------------------------------------------		
 // DB 연동 테스트		

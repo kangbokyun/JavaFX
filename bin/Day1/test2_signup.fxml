@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="SignupPane" prefHeight="506.0" prefWidth="545.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SignupController">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="722.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../새%20폴더/컷/6450696.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="6.0" layoutY="400.0" opacity="0.34" prefHeight="300.0" prefWidth="300.0" style="-fx-background-radius: 50;">
+         <children>
+            <TextField fx:id="signupidtxt" layoutX="28.0" layoutY="61.0" prefHeight="34.0" prefWidth="244.0" promptText="User ID">
+               <font>
+                  <Font name="Symbol" size="12.0" />
+               </font>
+            </TextField>
+            <Button fx:id="btnsignup" alignment="CENTER" blendMode="EXCLUSION" cache="true" contentDisplay="TOP" layoutX="26.0" layoutY="206.0" mnemonicParsing="false" onAction="#signup" prefHeight="43.0" prefWidth="244.0" style="-fx-border-color: #ffffff;" text="회원가입">
+               <font>
+                  <Font name="Symbol" size="12.0" />
+               </font>
+            </Button>
+            <Label fx:id="signupconfirm" layoutX="27.0" layoutY="249.0" prefHeight="24.0" prefWidth="147.0" text="회원가입에 실패했습니다.">
+               <font>
+                  <Font name="Symbol" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="btnBack" layoutX="189.0" layoutY="253.0" onMouseClicked="#Back" text="뒤로가기">
+               <font>
+                  <Font name="Symbol" size="12.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="196.0" fitWidth="200.0" layoutX="50.0" layoutY="-67.0">
+               <image>
+                  <Image url="@../../../../../../Downloads/pngwing.com.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="signupname" layoutX="27.0" layoutY="144.0" prefHeight="34.0" prefWidth="119.0" promptText="User Name">
+               <font>
+                  <Font name="Symbol" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="signupemailtxt" layoutX="154.0" layoutY="144.0" prefHeight="34.0" prefWidth="119.0" promptText="User Email">
+               <font>
+                  <Font name="Symbol" size="12.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="signuppwtxt1" layoutX="27.0" layoutY="103.0" prefHeight="34.0" prefWidth="119.0" promptText="UserPw1" />
+            <PasswordField fx:id="signuppwtxt2" layoutX="154.0" layoutY="103.0" prefHeight="34.0" prefWidth="119.0" promptText="UserPw2" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

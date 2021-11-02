@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="645.0" prefWidth="726.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CommunityController">
+   <children>
+      <TextField fx:id="CommunityTitletxt" layoutX="14.0" layoutY="185.0" prefHeight="35.0" prefWidth="578.0" promptText="Title" />
+      <TextArea fx:id="CommunityContentstxt" layoutX="14.0" layoutY="234.0" prefHeight="397.0" prefWidth="578.0" promptText="contents" />
+      <Button fx:id="CommunityRegistbtn" alignment="CENTER" layoutX="602.0" layoutY="529.0" mnemonicParsing="false" onAction="#CommunityRegistAction" prefHeight="45.0" prefWidth="116.0" style="-fx-background-color: #ffffff;" text="등록">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="CommunityBackbtn" alignment="CENTER" layoutX="602.0" layoutY="586.0" mnemonicParsing="false" onAction="#CommunityBackAction" prefHeight="45.0" prefWidth="116.0" style="-fx-background-color: #ffffff;" text="취소">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Line endX="197.0" layoutX="109.0" layoutY="68.0" startX="-62.0">
+         <effect>
+            <GaussianBlur />
+         </effect>
+      </Line>
+      <Label alignment="CENTER" layoutX="24.0" layoutY="15.0" prefHeight="44.0" prefWidth="283.0" text="My Community" textFill="#00a6ff" underline="true">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

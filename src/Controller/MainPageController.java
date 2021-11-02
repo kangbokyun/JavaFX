@@ -65,7 +65,7 @@ public class MainPageController implements Initializable {
 
 	    @FXML
 	    void CommunityAction(ActionEvent event) {
-	    	LoadPage("MyInfoPage");
+	    	LoadPage("CommunityListPage");
 	    }
 
 	    @FXML

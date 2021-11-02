@@ -90,6 +90,11 @@ public class SignupController implements Initializable {
 	    	//-----------------------------------------------------------------------------------------------------
 	    	
 	    	// 2. 중복체크
+	    	boolean resultIdCheck = MemberDAO.getMemberDAO().idCheck(signupidtxt.getText());
+	    	if(resultIdCheck) {
+	    		signupconfirm.setText("사용중인 아이디");
+	    		return;
+	    	}
 	    	
 	    	// 3. 객체화
 	    	Member member = new Member(signupidtxt.getText(), signuppwtxt1.getText(), signupname.getText(), signupemailtxt.getText()); 

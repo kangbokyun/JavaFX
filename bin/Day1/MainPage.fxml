@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:controller="Controller.MainPageController" fx:id="MainBoarderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="1005.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <AnchorPane fx:id="LeftAnchorPane" prefHeight="645.0" prefWidth="280.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="Homebtn" layoutX="14.0" layoutY="240.0" mnemonicParsing="false" onAction="#HomeAction" prefHeight="42.0" prefWidth="252.0" style="-fx-background-color: #ffffff;" text="HOME">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="39.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../씬빌더/house.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="Productbtn" layoutX="14.0" layoutY="302.0" mnemonicParsing="false" onAction="#ProductAction" prefHeight="42.0" prefWidth="252.0" style="-fx-background-color: #ffffff;" text="PRODUCT">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="49.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../씬빌더/shopping.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="Chattingbtn" layoutX="14.0" layoutY="370.0" mnemonicParsing="false" onAction="#ChattingAction" prefHeight="42.0" prefWidth="252.0" style="-fx-background-color: #ffffff;" text="CHATTING">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="49.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../씬빌더/chat.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="Communitybtn" layoutX="14.0" layoutY="440.0" mnemonicParsing="false" onAction="#CommunityAction" prefHeight="42.0" prefWidth="252.0" style="-fx-background-color: #ffffff;" text="COMMUNITY">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="49.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../씬빌더/good.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="MyInfobtn" layoutX="14.0" layoutY="510.0" mnemonicParsing="false" onAction="#MyInfoAction" prefHeight="42.0" prefWidth="252.0" style="-fx-background-color: #ffffff;" text="MY INFO">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="49.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../씬빌더/avatar.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="Logoutbtn" layoutX="14.0" layoutY="579.0" mnemonicParsing="false" onAction="#LogoutAction" prefHeight="42.0" prefWidth="252.0" style="-fx-background-color: #ffffff;" text="LOGOUT">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="49.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../씬빌더/logout.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <ImageView fitHeight="235.0" fitWidth="281.0">
+               <image>
+                  <Image url="@../../../../씬빌더/음악.png" />
+               </image>
+            </ImageView>
+            <Line endX="-3.0" endY="361.0" layoutX="25.0" layoutY="269.0" startX="-3.0" startY="-18.0" />
+            <Label fx:id="LoginIDLabel" alignment="CENTER" layoutX="127.0" layoutY="14.0" prefHeight="24.0" prefWidth="127.0" text="로그인한 아이디" textFill="WHITE" />
+            <Label alignment="CENTER" layoutX="24.0" layoutY="14.0" prefHeight="24.0" prefWidth="73.0" text="WELCOME" textFill="WHITE" />
+            <Label alignment="CENTER" layoutX="24.0" layoutY="195.0" prefHeight="26.0" prefWidth="234.0" text="Tel. 031 - 111 - 1234" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane fx:id="CenterAnchorPane" prefHeight="645.0" prefWidth="726.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="164.0" fitWidth="721.0" layoutX="4.0">
+               <image>
+                  <Image url="@../../../../씬빌더/equlazor3.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="180.0" fitWidth="720.0" layoutX="7.0" layoutY="459.0">
+               <image>
+                  <Image url="@../../../../씬빌더/equlazor2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="200.0" fitWidth="721.0" layoutX="2.0" layoutY="237.0">
+               <image>
+                  <Image url="@../../../../씬빌더/equlazor.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
