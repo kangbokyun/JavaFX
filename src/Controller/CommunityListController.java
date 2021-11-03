@@ -41,6 +41,7 @@ public class CommunityListController implements Initializable{
 		// 테이블에 객체넣기
 		CommunityBoardList.setItems(obserList);
 
+		
 		// 1회성 메소드
 		// 람다식
 //		CommunityBoardList.setOnMouseClicked( e -> { 정의 return } );
@@ -52,11 +53,8 @@ public class CommunityListController implements Initializable{
 															// 인수 -> 정의 : 익명메소드
 			if(e.getButton().equals(MouseButton.PRIMARY)) { // 해당 이벤트가 클릭이면
 				// 테이블뷰에 선택된 모델의 아이템(객체)
-				 board = CommunityBoardList.getSelectionModel().getSelectedItem();
+				board = CommunityBoardList.getSelectionModel().getSelectedItem();
 
-				// 조회수 증가
-				
-				
 				MainPageController.getInstance().LoadPage("CommunityView");
 			}
 			
@@ -68,6 +66,7 @@ public class CommunityListController implements Initializable{
 	    private TableView<Board> CommunityBoardList;
 	   // Table에 넣을 객체의 클래스명을 제네릭에 넣어라
 
+	   // board에 넣은 값을 보관하기 위한 선언
 	   public static Board board;
 
 	    @FXML

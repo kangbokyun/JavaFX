@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.effect.GaussianBlur?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
@@ -28,7 +29,7 @@
       <Label fx:id="CommunityViewTitleLabel" layoutX="125.0" layoutY="186.0" prefHeight="35.0" prefWidth="73.0" text="Label" />
       <Label fx:id="CommunityViewWriteLabel" layoutX="293.0" layoutY="186.0" prefHeight="35.0" prefWidth="73.0" text="Label" />
       <Label fx:id="CommunityViewDateLabel" layoutX="451.0" layoutY="186.0" prefHeight="35.0" prefWidth="111.0" text="Label" />
-      <Label fx:id="CommunityViewContentsLabel" layoutX="125.0" layoutY="234.0" prefHeight="274.0" prefWidth="579.0" text="Label" />
+      <Label fx:id="CommunityViewContentsLabel" layoutX="125.0" layoutY="234.0" prefHeight="239.0" prefWidth="579.0" text="Label" />
       <Label fx:id="CommunityViewBack" alignment="CENTER" layoutX="14.0" layoutY="80.0" onMouseClicked="#CommunityViewBackOMC" prefHeight="44.0" prefWidth="54.0" text="←">
          <font>
             <Font size="47.0" />
@@ -43,6 +44,7 @@
       </TableView>
       <Button fx:id="CommunityViewUpdatebtn" layoutX="628.0" layoutY="14.0" mnemonicParsing="false" onAction="#CommunityViewUpdateAction" prefHeight="44.0" prefWidth="84.0" text="Update" />
       <Button fx:id="CommunityViewDeletebtn" layoutX="537.0" layoutY="15.0" mnemonicParsing="false" onAction="#CommunityViewDeleteAction" prefHeight="44.0" prefWidth="84.0" text="Delete" />
-      <Button fx:id="CommunityViewReplybtn" layoutX="640.0" layoutY="508.0" mnemonicParsing="false" onAction="#CommunityViewReplyAction" prefHeight="123.0" prefWidth="65.0" text="Reply" />
+      <Button fx:id="CommunityViewReplybtn" layoutX="640.0" layoutY="473.0" mnemonicParsing="false" onAction="#CommunityViewReplyAction" prefHeight="158.0" prefWidth="65.0" text="Reply" />
+      <TextArea fx:id="ReplyContentstxt" layoutX="126.0" layoutY="473.0" prefHeight="38.0" prefWidth="516.0" promptText="Reply" />
    </children>
 </AnchorPane>

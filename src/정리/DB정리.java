@@ -34,13 +34,39 @@ public class DB정리 {
 	// 모든필드 : select * from 테이블명 where 조건
 	
 	// 삽입(insert)
-	// 
+	// insert
 	
 	// 삭제(delete)
+	
+	// 수정(update)
+	// update 테이블면 set 변경필드 
 	
 	// 조건(비교연산자, 키워드, 함수)
 	// and : 이면서, 면서, 이고, 그리고
 	//		- 조건1 and 조건2
 	// or : 이거나, 거나, 또는, 하나라도
 	//		- 조건1 or 조건2
+	
+	// select만 executeQuery() 나머지는 executeUpdate()
+	
+	// next는 레코드를 빼오는것(한 줄)
+	// get은 필드를 빼오는 것(현재 레코드의 필드)
+	
+	// SQL : 데이터베이스 관리 언어
+	// DDL 정의어
+	// 1. Create : 생성
+	// 
+	
+	// 2. Drop : 삭제
+	// 3. Alter : 수정
+	
+	
+	// 테이블뷰
+	// ObserverList<> : javafx를 사용하는 컬렉션 프레임워크
+		// 1. 테이블에 리스트 세팅 : Tableview에 리스트를 넣을 때 setItems(ObservableList)
+		// 2. 테이블 필드에 리스트 내 객체 세팅
+		// 2-1. 테이블 내 열 가져오기
+		// 2-2. 해당열에 객체 값 넣기
+	
+	// 테이블뷰 이름.getSelection
 }
