@@ -69,4 +69,15 @@ public class DB정리 {
 		// 2-2. 해당열에 객체 값 넣기
 	
 	// 테이블뷰 이름.getSelection
+	
+	
+	
+	// 1.primary key : 기본 키 / 식별용 필드(중복값x null) : 주민번호, 사번, 학번
+	// 2. foreign key : 외래 키(다른 테이블에서 기본키와 연결된 키)
+	// 3. auto_increment: 자동번호 주입
+	// 4. not null : null값 제외(null일경우 오류 발생)
+	// 5. 
+	
+	
+	
 }

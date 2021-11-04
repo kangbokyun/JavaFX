@@ -129,15 +129,15 @@ public class CommunityViewController implements Initializable {
     	ObservableList<Reply> obList = BoardDAO.getboardDAO().replyList(board.getB_no());
     	
     	TableColumn tc = CommunityViewReplyList.getColumns().get(0);
-    	tc.setCellValueFactory(new PropertyValueFactory<>("r_no"));
-    	tc = CommunityViewReplyList.getColumns().get(1);
+//    	tc.setCellValueFactory(new PropertyValueFactory<>("r_no"));
+//    	tc = CommunityViewReplyList.getColumns().get(1);
     	tc.setCellValueFactory(new PropertyValueFactory<>("r_contents"));
-    	tc = CommunityViewReplyList.getColumns().get(2);
-    	tc.setCellValueFactory(new PropertyValueFactory<>("r_write"));
-    	tc = CommunityViewReplyList.getColumns().get(3);
-    	tc.setCellValueFactory(new PropertyValueFactory<>("r_date"));
-    	tc = CommunityViewReplyList.getColumns().get(4);
-    	tc.setCellValueFactory(new PropertyValueFactory<>("r_b_no"));
+//    	tc = CommunityViewReplyList.getColumns().get(2);
+//    	tc.setCellValueFactory(new PropertyValueFactory<>("r_write"));
+//    	tc = CommunityViewReplyList.getColumns().get(3);
+//    	tc.setCellValueFactory(new PropertyValueFactory<>("r_date"));
+//    	tc = CommunityViewReplyList.getColumns().get(4);
+//    	tc.setCellValueFactory(new PropertyValueFactory<>("r_b_no"));
     	
     	CommunityViewReplyList.setItems(obList);
     }

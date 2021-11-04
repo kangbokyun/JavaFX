@@ -108,7 +108,7 @@ public class MainPageController implements Initializable {
 
 	    @FXML
 	    void ProductAction(ActionEvent event) {
-	    	LoadPage("MyInfoPage");
+	    	LoadPage("ProductPage");
 	    }
 	    
 	    // 현재(보더가 있는 페이지) 클래스 객체화---------------------------------------------------------------------------------
