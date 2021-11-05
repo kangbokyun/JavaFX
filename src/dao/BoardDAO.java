@@ -126,7 +126,30 @@ public class BoardDAO {
 	
 	
 	// 5. 게시물 개별조회 메소드
-	
+	public ObservableList<Board> myBoardList(String id){ // board에 있는거 통째로 빼와서 arraylist에 담기
+		// 선언
+		ObservableList<Board> obserList = FXCollections.observableArrayList(); 
+		try {
+
+		
+			// 조건없이 다 가져오기
+			String sql = "select * from board where b_write = ? order by b_no desc"; // order by 기준 desc : 기준을 내림차순 정렬(asc : 오름차순)
+		
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			
+			rs = pstmt.executeQuery();
+			// 검색된 쿼리 레코드의 객체화(하나씩)
+			while(rs.next()) {
+				// 쿼리결과내 레코드가 없을 때까지 반복하면서 객체화하기
+				Board board = new Board(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getInt(6));
+				obserList.add(board);
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return obserList;
+	}
 	
 
 	// 6. 조회수 증가 메소드

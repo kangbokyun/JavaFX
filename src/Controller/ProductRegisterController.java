@@ -85,7 +85,7 @@ public class ProductRegisterController {
     	
     	// 로그인된 아이디의 회원번호 검색 db를 만들어서 activation에 넣어야 함
     	// 임의
-    	int m_no = ProductDAO.getProductDAO().bnoCheck(MainPageController.getInstance().getLogId());
+    	int m_no = ProductDAO.getProductDAO().mnoCheck(MainPageController.getInstance().getLogId());
     	
     	// 객체화
     	Product product = new Product(pname, pimg, pcontents, pcategory, pprice, 1, m_no);

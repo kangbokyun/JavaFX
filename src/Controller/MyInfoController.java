@@ -4,8 +4,14 @@ import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
+import dao.BoardDAO;
 import dao.MemberDAO;
+import dao.ProductDAO;
+import domain.Board;
 import domain.Member;
+import domain.Product;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -14,6 +20,9 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class MyInfoController implements Initializable {
 	@Override
@@ -21,12 +30,48 @@ public class MyInfoController implements Initializable {
 		// 로그인된 아이디의 회원정보를 DB에서 찾기
 		String loginId = MainPageController.getInstance().getLogId();
 		Member member = MemberDAO.getMemberDAO().getmember(loginId);
+
+		ObservableList<Board> boards = BoardDAO.getboardDAO().myBoardList(loginId);
+		MyInfoCommTable.setItems(boards);
+		
+		TableColumn tc = MyInfoCommTable.getColumns().get(0);
+		tc.setCellValueFactory(new PropertyValueFactory<>("b_no"));
+		tc = MyInfoCommTable.getColumns().get(1);
+		tc.setCellValueFactory(new PropertyValueFactory<>("b_title"));
+		tc = MyInfoCommTable.getColumns().get(2);
+		tc.setCellValueFactory(new PropertyValueFactory<>("b_date"));
+		tc = MyInfoCommTable.getColumns().get(3);
+		tc.setCellValueFactory(new PropertyValueFactory<>("b_view"));
+		
+		// 내가 등록한 제품
+		int m_no = ProductDAO.getProductDAO().mnoCheck(loginId);
+		ObservableList<Product> products = ProductDAO.getProductDAO().myProductList(m_no);
+		MyInfoProdTable.setItems(products);
+//		
+		tc = MyInfoProdTable.getColumns().get(0);
+		tc.setCellValueFactory(new PropertyValueFactory<>("p_name"));
+		tc = MyInfoProdTable.getColumns().get(1);
+		tc.setCellValueFactory(new PropertyValueFactory<>("p_category"));
+		tc = MyInfoProdTable.getColumns().get(2);
+		tc.setCellValueFactory(new PropertyValueFactory<>("p_price"));
+		tc = MyInfoProdTable.getColumns().get(3);
+		tc.setCellValueFactory(new PropertyValueFactory<>("p_activation"));
+		tc = MyInfoProdTable.getColumns().get(4);
+		tc.setCellValueFactory(new PropertyValueFactory<>("p_date"));
+		
 		
 		MIIdLabel.setText(member.getM_id());
 		MINameLabel.setText(member.getM_name());
 		MIEmailLabel.setText(member.getM_email());
 		MIPointLabel.setText(member.getM_point() + ""); // int를 String으로 출력
+		
 	}
+	
+    @FXML
+    private TableView<Board> MyInfoCommTable;
+
+    @FXML
+    private TableView<Product> MyInfoProdTable;
 	
     @FXML
     private Label MIPointLabel;

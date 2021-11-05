@@ -80,4 +80,17 @@ public class DB정리 {
 	
 	
 	
+	// 1. Controller 인스턴스
+	// public static MainPageController instance;
+	// public MainPageController(){
+	// 		return instance;										// 호출
+	// }
+	// public MainPageController getInstance(){
+	// 		instance = this;										// 현재클래스의 메모리를 instance에 넣기
+	// }
+	
+	// 2. DAO 인스턴스
+	// public static ProductDAO productDAO = new ProductDAO();
+	
+	
 }

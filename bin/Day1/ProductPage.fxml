@@ -43,5 +43,6 @@
       <Label fx:id="ProductPricetxt" layoutX="463.0" layoutY="206.0" prefHeight="35.0" prefWidth="115.0" text="제품명" />
       <Label fx:id="ProductIdtxt" layoutX="463.0" layoutY="257.0" prefHeight="35.0" prefWidth="115.0" text="제품명" />
       <Button fx:id="ProductRegisterbtn1" layoutX="444.0" layoutY="368.0" mnemonicParsing="false" onAction="#ProductRegisterAction" prefHeight="35.0" prefWidth="80.0" text="등록" />
+      <Button fx:id="ProductRegisterActivationbtn1" layoutX="347.0" layoutY="368.0" mnemonicParsing="false" onAction="#ProductRegisterActivationAction" prefHeight="35.0" prefWidth="80.0" text="상태" />
    </children>
 </AnchorPane>

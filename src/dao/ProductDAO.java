@@ -55,7 +55,7 @@ public class ProductDAO {
 		}
 	}
 	
-	public int bnoCheck(String id) {
+	public int mnoCheck(String id) {
 		try {
 			
 			String sql = "select m_no from member where m_id = ?";
@@ -147,6 +147,42 @@ public class ProductDAO {
 			pstmt.executeUpdate();
 			
 			return true;
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			return false;
+		}
+	}
+	
+	public ObservableList<Product> myProductList(int m_no){
+		ObservableList<Product> products = FXCollections.observableArrayList();
+		try {
+			String sql = "select * from product where m_no = ? order by p_no desc";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, m_no);
+			
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				Product product = new Product(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getInt(6), rs.getInt(7), rs.getString(8), rs.getInt(9));
+				products.add(product);
+			}
+			return products;
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return products;
+	}
+	
+	public boolean activationUpdate(int p_activation, int p_no) {
+		try {
+			String sql = "update product set p_activation = ? where p_no = ?";
+		
+			pstmt.setInt(1, p_activation);
+			pstmt.setInt(2, p_no);
+
+			pstmt.executeUpdate();
+			
+			return true;
+			
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 			return false;

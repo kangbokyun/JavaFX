@@ -27,25 +27,7 @@ public class ProductController implements Initializable {
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		// DB에서 제품 목록 가져오기
-		ObservableList<Product> products = ProductDAO.getProductDAO().productList();
-		ProductDeletebtn.setVisible(false);
-		ProductUpdatebtn.setVisible(false);
-		
-		// 제품목록을 테이블뷰에 넣어주기
-		ProductListTable.setItems(products);
-		
-		// 테이블뷰에 열을 하나씩 가져와서 리스트 내 객체에 필드와 연결
-		TableColumn tc = ProductListTable.getColumns().get(0);
-		tc.setCellValueFactory(new PropertyValueFactory<>("p_name"));
-		tc = ProductListTable.getColumns().get(1);
-		tc.setCellValueFactory(new PropertyValueFactory<>("p_category"));
-		tc = ProductListTable.getColumns().get(2);
-		tc.setCellValueFactory(new PropertyValueFactory<>("p_price"));
-		tc = ProductListTable.getColumns().get(3);
-		tc.setCellValueFactory(new PropertyValueFactory<>("p_activation"));
-		tc = ProductListTable.getColumns().get(4);
-		tc.setCellValueFactory(new PropertyValueFactory<>("p_date"));
+		ProductListTableLoad();
 		
 		// 테이블뷰에서 클릭했을 때 아이템 가져오기
 		// 1. 테이블뷰에 클릭 이벤트
@@ -69,10 +51,15 @@ public class ProductController implements Initializable {
 			if(MainPageController.getInstance().getLogId().equals(ProductIdtxt.getText())) {
 				ProductDeletebtn.setVisible(true);
 				ProductUpdatebtn.setVisible(true);
+				ProductRegisterActivationbtn1.setVisible(true);
 			} else {
 				ProductDeletebtn.setVisible(false);
 				ProductUpdatebtn.setVisible(false);
+				ProductRegisterActivationbtn1.setVisible(false);
 			}
+			
+			// 버튼 텍스트
+			ProductRegisterActivationbtn1.setText(product.getActivation());
 		});
 	}
 	
@@ -101,6 +88,9 @@ public class ProductController implements Initializable {
 
     @FXML
     private Label ProductPricetxt;
+    
+    @FXML
+    private Button ProductRegisterActivationbtn1;
 
     @FXML
     private Button ProductRegisterbtn1;
@@ -139,5 +129,50 @@ public class ProductController implements Initializable {
 
     }
     
+    @FXML
+    void ProductRegisterActivationAction(ActionEvent event) {
+    	ProductRegisterbtn1.setText(product.getActivation());
+    	int pa = product.getP_activation();
+    	int ch = pa + 1;
+    	if(ch > 3) {
+    		ch = 1;
+    	}
+    	if(ch == 1) {
+    		ProductDAO.getProductDAO().activationUpdate(1, product.getP_no());
+    		ProductListTableLoad();
+    		ProductRegisterActivationbtn1.setText("판매중");
+    	}
+    	if(ch == 2) {
+    		ProductDAO.getProductDAO().activationUpdate(2, product.getP_no());
+    		ProductListTableLoad();
+    		ProductRegisterActivationbtn1.setText("거래중");
+    	}
+    	if(ch == 3) {
+    		ProductDAO.getProductDAO().activationUpdate(3, product.getP_no());
+    		ProductListTableLoad();
+    		ProductRegisterActivationbtn1.setText("거래완료");
+    	}
+    }
     
+    void ProductListTableLoad() {
+		// DB에서 제품 목록 가져오기
+		ObservableList<Product> products = ProductDAO.getProductDAO().productList();
+		ProductDeletebtn.setVisible(false);
+		ProductUpdatebtn.setVisible(false);
+		
+		// 제품목록을 테이블뷰에 넣어주기
+		ProductListTable.setItems(products);
+		
+		// 테이블뷰에 열을 하나씩 가져와서 리스트 내 객체에 필드와 연결
+		TableColumn tc = ProductListTable.getColumns().get(0);
+		tc.setCellValueFactory(new PropertyValueFactory<>("p_name"));
+		tc = ProductListTable.getColumns().get(1);
+		tc.setCellValueFactory(new PropertyValueFactory<>("p_category"));
+		tc = ProductListTable.getColumns().get(2);
+		tc.setCellValueFactory(new PropertyValueFactory<>("p_price"));
+		tc = ProductListTable.getColumns().get(3);
+		tc.setCellValueFactory(new PropertyValueFactory<>("activation"));
+		tc = ProductListTable.getColumns().get(4);
+		tc.setCellValueFactory(new PropertyValueFactory<>("p_date"));
+    }
 }
