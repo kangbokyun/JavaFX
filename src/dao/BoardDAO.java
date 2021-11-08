@@ -217,4 +217,20 @@ public class BoardDAO {
 			return obList;
 		}
 	}
+	
+	// 게시물 개수 반환
+	public int boardCount() {
+		try {
+			String sql = "select count(*) from board";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				return rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			return 0;
+		}
+		return 0;
+	}
 }

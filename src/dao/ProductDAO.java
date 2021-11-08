@@ -5,8 +5,11 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import domain.Product;
+import domain.ProductDate;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -187,5 +190,58 @@ public class ProductDAO {
 			System.out.println(e.getMessage());
 			return false;
 		}
+	}
+	
+	public int productCount() {
+		try {
+			String sql = "select count(*) from product";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				return rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			return 0;
+		}
+		return 0;
+	}
+	
+	// 날짜별 제품수 반환
+	public ArrayList<ProductDate> productDateList() {
+		ArrayList<ProductDate> dates = new ArrayList<>();
+		try {
+			String sql = "select substring_index(product.p_date, ' ', 1), count(*) from product group by substring_index(product.p_date, ' ', 1)";
+			pstmt = conn.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				ProductDate date = new ProductDate(rs.getString(1), rs.getInt(2));
+				dates.add(date);
+			}
+			return dates;
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return dates;
+	}
+	
+	// 카테고리별 제품 수량 반환
+	public HashMap<String, Integer> productCategoryList() {
+		HashMap<String, Integer> map = new HashMap<>();
+		
+		try {
+			String sql = "select p_category, count(*) from product group by p_category";
+			pstmt= conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				// 검색된 값을 map에 넣기 -> key : 카테고리 / value : 카테고리별 개수
+				map.put(rs.getString(1), rs.getInt(2));
+			}
+			return map;
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return map;
 	}
 }

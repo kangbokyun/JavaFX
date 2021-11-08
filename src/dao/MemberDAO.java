@@ -274,6 +274,23 @@ public class MemberDAO {
 			}
 		}
 		
+		// 회원 수 반환 메소드 "select count(*) from member" = 모든 멤버의 수 -> count(필드) : 해당 필드의 모든 레코드 수를 가져옴
+		public int memberCount() {
+			try {
+				String sql = "select count(*) from member";
+			
+				pstmt = conn.prepareStatement(sql);
+				rs = pstmt.executeQuery();
+				if(rs.next()) {
+					return rs.getInt(1);
+				}
+				
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}
+			return 0;
+		}
+		
 		// 게시판 설계
 		// 1. DB 설계
 			// 게시물번호	int

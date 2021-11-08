@@ -70,7 +70,7 @@ public class MainPageController implements Initializable {
 
 	    @FXML
 	    void HomeAction(ActionEvent event) {
-	    	LoadPage("HomePage");
+	    	LoadPage("totalPage");
 	    }
 
 	    @FXML
