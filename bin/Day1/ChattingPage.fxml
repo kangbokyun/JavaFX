@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="645.0" prefWidth="726.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ChattingController">
+   <children>
+      <Line endX="197.0" layoutX="109.0" layoutY="68.0" startX="-62.0">
+         <effect>
+            <GaussianBlur />
+         </effect>
+      </Line>
+      <Label alignment="CENTER" layoutX="24.0" layoutY="15.0" prefHeight="44.0" prefWidth="283.0" text="Chatting" textFill="#00a6ff" underline="true">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="Clienttxt" layoutX="24.0" layoutY="94.0" prefHeight="474.0" prefWidth="370.0" />
+      <Button fx:id="Connectbtn" onAction="#ConnectbtnAction" layoutX="589.0" layoutY="94.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="123.0" text="접속" />
+      <TableView layoutX="498.0" layoutY="270.0" prefHeight="361.0" prefWidth="214.0">
+        <columns>
+          <TableColumn prefWidth="213.0" text="접속자" />
+        </columns>
+      </TableView>
+      <TextField fx:id="Contenttxt" onAction="#msgSendEnter" layoutX="24.0" layoutY="580.0" prefHeight="44.0" prefWidth="370.0" />
+      <Button fx:id="inputbtn" onAction="#inputbtnAction" layoutX="403.0" layoutY="580.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="79.0" text="입력" />
+   </children>
+</AnchorPane>
