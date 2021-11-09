@@ -60,7 +60,7 @@ public class MainPageController implements Initializable {
 
 	    @FXML
 	    void ChattingAction(ActionEvent event) {
-	    	LoadPage("MyInfoPage");
+	    	LoadPage("ChattingPage");
 	    }
 
 	    @FXML
